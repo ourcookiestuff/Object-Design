@@ -1,5 +1,5 @@
 # Object-Design
-===
+
 Zadanie 1 - Paradygmaty
 ---
 ✓ | **3.0** Procedura do generowania 50 losowych liczb od 0 do 100 | [Commit](https://github.com/ourcookiestuff/Object-Design/blob/fbd22a15c06070d8dc04efe90584e2d890e05cca/zad1/BubbleSort.pas)  
