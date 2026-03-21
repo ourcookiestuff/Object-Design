@@ -6,13 +6,13 @@ var
   tab: array[1..50] of integer;
 
 { generowanie tablicy z losowymi liczbami }
-procedure Losuj;
+procedure Losuj(ile, od_, do_: integer);
 var
   i: integer;
 begin
   randomize;
-  for i := 1 to 50 do
-    tab[i] := random(101);
+  for i := 1 to ile do
+    tab[i] := random(do_ - od_ + 1) + od_;
 end;
 
 { sortowanie bąbelkowe }
@@ -42,7 +42,7 @@ end;
 
 begin
     writeln('Losowe liczby:');
-    Losuj;
+    Losuj(50, 1, 48);
     Wypisz;
 
     writeln('Posortowane liczby:');
