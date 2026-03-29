@@ -10,9 +10,9 @@ Zadanie 1 - Paradygmaty
 
 Zadanie 2 - Symfony (PHP)
 ---
-✓ | **3.0** Jeden model z kontrolerem z produktami, zgodnie z CRUD | [Commit](https://github.com/ourcookiestuff/Object-Design/tree/f918500c325a54e6b785bf5ebf06842c50a3558e/zad2)
-✓ | **3.5** Skrypty do testów endpointów via curl | [Commit](https://github.com/ourcookiestuff/Object-Design/blob/d9e2239b01645bee9d77249835eaf29817591adc/zad2/test_endpoints.sh)
-✓ | **4.0** Dwa dodatkowe kontrolery wraz z modelami | [Commit](https://github.com/ourcookiestuff/Object-Design/tree/0748110bdc362d6249b5023f74c56580a7fc37f1/zad2/src/Controller)
-✓ | **4.5** Widoki do wszystkich kontrolerów | [Commit](https://github.com/ourcookiestuff/Object-Design/tree/6a1b32dcc9c042a9397bd23d27bc0639ea184fe3/zad2)
-✗ | **5.0** Panel adminstracyjny
+✓ | **3.0** Jeden model z kontrolerem z produktami, zgodnie z CRUD | [Commit](https://github.com/ourcookiestuff/Object-Design/tree/f918500c325a54e6b785bf5ebf06842c50a3558e/zad2)  
+✓ | **3.5** Skrypty do testów endpointów via curl | [Commit](https://github.com/ourcookiestuff/Object-Design/blob/d9e2239b01645bee9d77249835eaf29817591adc/zad2/test_endpoints.sh) 
+✓ | **4.0** Dwa dodatkowe kontrolery wraz z modelami | [Commit](https://github.com/ourcookiestuff/Object-Design/tree/0748110bdc362d6249b5023f74c56580a7fc37f1/zad2/src/Controller) 
+✓ | **4.5** Widoki do wszystkich kontrolerów | [Commit](https://github.com/ourcookiestuff/Object-Design/tree/6a1b32dcc9c042a9397bd23d27bc0639ea184fe3/zad2)    
+✗ | **5.0** Panel adminstracyjny   
 
