@@ -1,0 +1,17 @@
+{% extends 'base.html.twig' %}
+{% block title %}Kategorie{% endblock %}
+{% block body %}
+<h1>Kategorie</h1>
+<table>
+    <tr><th>ID</th><th>Nazwa</th><th>Opis</th></tr>
+    {% for c in categories %}
+    <tr>
+        <td>{{ c.id }}</td>
+        <td>{{ c.name }}</td>
+        <td>{{ c.description }}</td>
+    </tr>
+    {% else %}
+    <tr><td colspan="3">Brak kategorii</td></tr>
+    {% endfor %}
+</table>
+{% endblock %}

@@ -1,0 +1,19 @@
+{% extends 'base.html.twig' %}
+{% block title %}Zamówienia{% endblock %}
+{% block body %}
+<h1>Zamówienia</h1>
+<table>
+    <tr><th>ID</th><th>Klient</th><th>Suma</th><th>Status</th><th>Data</th></tr>
+    {% for o in orders %}
+    <tr>
+        <td>{{ o.id }}</td>
+        <td>{{ o.customer_name }}</td>
+        <td>{{ o.total }} zł</td>
+        <td>{{ o.status }}</td>
+        <td>{{ o.created_at }}</td>
+    </tr>
+    {% else %}
+    <tr><td colspan="5">Brak zamówień</td></tr>
+    {% endfor %}
+</table>
+{% endblock %}
