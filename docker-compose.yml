@@ -1,0 +1,9 @@
+services:
+  app:
+    image: kprzystalski/projobj-php:latest
+    ports:
+      - "8000:8000"
+    volumes:
+      - .:/var/www/html
+    working_dir: /var/www/html
+    command: tail -f /dev/null
