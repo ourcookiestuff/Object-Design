@@ -2,13 +2,14 @@ package com.object_des.auth
 
 import com.object_des.auth.service.AuthService
 import org.springframework.beans.factory.annotation.Autowired
+import org.springframework.context.annotation.Lazy
 import org.springframework.beans.factory.annotation.Qualifier
 import org.springframework.boot.autoconfigure.SpringBootApplication
 import org.springframework.boot.runApplication
 import jakarta.annotation.PostConstruct
 
 @SpringBootApplication
-class AuthApplication @Autowired constructor( @Qualifier("authService") private val authService: AuthService ) {
+class AuthApplication @Autowired constructor( @Lazy @Qualifier("lazyAuthService") private val authService: AuthService ) {
 	@PostConstruct
 	fun init() {
 		println("AuthApplication started - testing AuthService:")

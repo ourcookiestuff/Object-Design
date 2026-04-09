@@ -4,11 +4,12 @@ import com.object_des.auth.model.UserResponse
 import com.object_des.auth.model.LoginRequest
 import com.object_des.auth.service.AuthService
 import org.springframework.beans.factory.annotation.Qualifier
+import org.springframework.context.annotation.Lazy
 import org.springframework.web.bind.annotation.*
 
 @RestController
 @RequestMapping("/api/auth")
-class AuthController( @Qualifier("authService") private val authService: AuthService ) {
+class AuthController( @Lazy @Qualifier("lazyAuthService") private val authService: AuthService ) {
     @GetMapping("/user")
     fun getUser() = listOf(
         UserResponse(1, "john_doe", "john.doe@example.com"),
