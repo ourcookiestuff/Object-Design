@@ -20,7 +20,7 @@ Zadanie 3 - Kotlin (Spring)
 ---
 ✓ | 3.0 Jeden kontroler wraz z danymi wyświetlanymi z listy na endpoint’cie w formacie JSON - Kotlin + Spring Boot | [Commit](https://github.com/ourcookiestuff/Object-Design/tree/f89e23d8a01cf0e4d3bab2ec0cac9c41f58152a7/zad3/src/main/kotlin/com/object_des/auth)  
 ✓ | 3.5 Klasa do autoryzacji (mock) jako Singleton w formie eager | [Commit](https://github.com/ourcookiestuff/Object-Design/commit/5eeae83d77c6192c15eb4d96c8bc1b5ac3854e1f)  
-✗ | 4.0 Obsługa danych autoryzacji przekazywanych przez użytkownika    
+✓ | 4.0 Obsługa danych autoryzacji przekazywanych przez użytkownika | [Commit](https://github.com/ourcookiestuff/Object-Design/commit/1c1dabe9f8627765b5b6c5a1979709bbf794afaf)
 ✗ | 4.5 Wstrzyknięcie singletonu do głównej klasy via @Autowired     
 ✗ | 5.0 Obok wersji Eager do wyboru wersja Singletona w wersji lazy
 
