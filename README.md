@@ -16,3 +16,11 @@ Zadanie 2 - Symfony (PHP)
 ✓ | **4.5** Widoki do wszystkich kontrolerów | [Commit](https://github.com/ourcookiestuff/Object-Design/tree/6a1b32dcc9c042a9397bd23d27bc0639ea184fe3/zad2)    
 ✗ | **5.0** Panel adminstracyjny   
 
+Zadanie 3 - Kotlin (Spring)
+---
+✓ | 3.0 Należy stworzyć jeden kontroler wraz z danymi wyświetlanymi z listy na endpoint’cie w formacie JSON - Kotlin + Spring Boot | [Commit](https://github.com/ourcookiestuff/Object-Design/tree/f89e23d8a01cf0e4d3bab2ec0cac9c41f58152a7/zad3/src/main/kotlin/com/object_des/auth)  
+✗ | 3.5 Należy stworzyć klasę do autoryzacji (mock) jako Singleton w formie eager  
+✗ | 4.0 Należy obsłużyć dane autoryzacji przekazywane przez użytkownika    
+✗ | 4.5 Należy wstrzyknąć singleton do głównej klasy via @Autowired lub kontruktor (constructor injection)     
+✗ | 5.0 Obok wersji Eager do wyboru powinna być wersja Singletona w wersji lazy
+
