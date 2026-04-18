@@ -18,9 +18,16 @@ Zadanie 2 - Symfony (PHP)
 
 Zadanie 3 - Kotlin (Spring)
 ---
-✓ | 3.0 Jeden kontroler wraz z danymi wyświetlanymi z listy na endpoint’cie w formacie JSON - Kotlin + Spring Boot | [Commit](https://github.com/ourcookiestuff/Object-Design/tree/f89e23d8a01cf0e4d3bab2ec0cac9c41f58152a7/zad3/src/main/kotlin/com/object_des/auth)  
-✓ | 3.5 Klasa do autoryzacji (mock) jako Singleton w formie eager | [Commit](https://github.com/ourcookiestuff/Object-Design/commit/5eeae83d77c6192c15eb4d96c8bc1b5ac3854e1f)  
-✓ | 4.0 Obsługa danych autoryzacji przekazywanych przez użytkownika | [Commit](https://github.com/ourcookiestuff/Object-Design/commit/1c1dabe9f8627765b5b6c5a1979709bbf794afaf)    
-✓ | 4.5 Wstrzyknięcie singletonu do głównej klasy via @Autowired | [Commit](https://github.com/ourcookiestuff/Object-Design/commit/0b705bee278786ed2ee16985037ad05ff54a7917)   
-✓ | 5.0 Obok wersji Eager do wyboru wersja Singletona w wersji lazy | [Commit](https://github.com/ourcookiestuff/Object-Design/commit/3422ad1399f0dca865a61fcac5723dec0384bc97)
+✓ | **3.0** Jeden kontroler wraz z danymi wyświetlanymi z listy na endpoint’cie w formacie JSON - Kotlin + Spring Boot | [Commit](https://github.com/ourcookiestuff/Object-Design/tree/f89e23d8a01cf0e4d3bab2ec0cac9c41f58152a7/zad3/src/main/kotlin/com/object_des/auth)  
+✓ | **3.5** Klasa do autoryzacji (mock) jako Singleton w formie eager | [Commit](https://github.com/ourcookiestuff/Object-Design/commit/5eeae83d77c6192c15eb4d96c8bc1b5ac3854e1f)  
+✓ | **4.0** Obsługa danych autoryzacji przekazywanych przez użytkownika | [Commit](https://github.com/ourcookiestuff/Object-Design/commit/1c1dabe9f8627765b5b6c5a1979709bbf794afaf)    
+✓ | **4.5** Wstrzyknięcie singletonu do głównej klasy via @Autowired | [Commit](https://github.com/ourcookiestuff/Object-Design/commit/0b705bee278786ed2ee16985037ad05ff54a7917)   
+✓ | **5.0** Obok wersji Eager do wyboru wersja Singletona w wersji lazy | [Commit](https://github.com/ourcookiestuff/Object-Design/commit/3422ad1399f0dca865a61fcac5723dec0384bc97)
 
+Zadanie 4 - Go (echo)
+---
+✗ | **3.0** Kontroler Pogody, która pozwala na pobieranie danych o pogodzie    
+✗ | **3.5** Model Pogoda wykorzystujący gorm, dane załadować z listy przy uruchomieniu     
+✗ | **4.0** Klasa proxy, która pobiera dane z serwisu zewnętrznego podczas zapytania do kontrolera     
+✗ | **4.5** Pobrane dane z zewnątrz zapisywane do bazy danych      
+✗ | **5.0** Rozszerzenie endpointa na więcej niż jedną lokalizację zwracając JSONa     
