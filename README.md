@@ -27,7 +27,7 @@ Zadanie 3 - Kotlin (Spring)
 Zadanie 4 - Go (echo)
 ---
 ✓ | **3.0** Kontroler Pogody, która pozwala na pobieranie danych o pogodzie | [Commit](https://github.com/ourcookiestuff/Object-Design/commit/7676975f54f48933d95dcd8967c124bdaac036c2)    
-✗ | **3.5** Model Pogoda wykorzystujący gorm, dane załadować z listy przy uruchomieniu     
+✓ | **3.5** Model Pogoda wykorzystujący gorm, dane załadować z listy przy uruchomieniu | [Commit](https://github.com/ourcookiestuff/Object-Design/commit/24b2ee7b0e14a59b52c9c301308c5ec8a2033e42)  
 ✗ | **4.0** Klasa proxy, która pobiera dane z serwisu zewnętrznego podczas zapytania do kontrolera     
 ✗ | **4.5** Pobrane dane z zewnątrz zapisywane do bazy danych      
 ✗ | **5.0** Rozszerzenie endpointa na więcej niż jedną lokalizację zwracając JSONa     
