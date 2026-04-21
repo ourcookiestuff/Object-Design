@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <title>Weather App</title>
+
+    <style>
+        body {
+            font-family: Arial;
+            background: #1B364B;
+            color: white;
+            text-align: center;
+            padding-top: 100px;
+        }
+
+        button {
+            padding: 10px 20px;
+            margin: 10px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .box {
+            margin-top: 30px;
+            font-size: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Weather App</h1>
+
+    <div>
+        <button onclick="getWeather('Warsaw')">Warsaw</button>
+        <button onclick="getWeather('Cracow')">Cracow</button>
+    </div>
+
+    <div class="box">
+        <p><b>City:</b> <span id="city">-</span></p>
+        <p><b>Conditions:</b> <span id="conditions">-</span></p>
+        <p><b>Max temp:</b> <span id="max">-</span></p>
+        <p><b>Min temp:</b> <span id="min">-</span></p>
+    </div>
+
+    <script>
+        async function getWeather(city) {
+            const url = "http://localhost:8080/weather?city=" + city;
+
+            try {
+                const response = await fetch(url);
+                const data = await response.json();
+
+                const weather = data[0];
+
+                document.getElementById("city").textContent = weather.city;
+                document.getElementById("conditions").textContent = weather.conditions;
+                document.getElementById("max").textContent = weather.temperature_max + "°C";
+                document.getElementById("min").textContent = weather.temperature_min + "°C";
+
+            } catch (err) {
+                alert("Błąd pobierania danych");
+            }
+        }
+
+        // startowo Warsaw
+        getWeather("Warsaw");
+    </script>
+
+</body>
+</html>
