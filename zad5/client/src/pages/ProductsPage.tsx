@@ -1,19 +1,14 @@
 import { useNavigate } from 'react-router-dom'
+import { useCart } from '../context/CartContext'
 import Produkty from '../components/Produkty'
 
-type Product = { id: number; name: string; price: number }
-
-type Props = {
-  cart: Product[]
-  onAddToCart: (product: Product) => void
-}
-
-export default function ProductsPage({ cart, onAddToCart }: Props) {
+export default function ProductsPage() {
+  const { cart } = useCart()
   const navigate = useNavigate()
 
   return (
     <div>
-      <Produkty onAddToCart={onAddToCart} />
+      <Produkty />
       <button onClick={() => navigate('/koszyk')}>
         Przejdź do koszyka ({cart.length})
       </button>

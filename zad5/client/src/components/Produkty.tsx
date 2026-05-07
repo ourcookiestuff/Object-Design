@@ -1,34 +1,28 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState } from 'react'
+import { useCart } from '../context/CartContext'
+import type { Product } from '../context/CartContext'
 
-type Product = { id: number; name: string; price: number };
+export default function Produkty() {
+  const [products, setProducts] = useState<Product[]>([])
+  const { addToCart } = useCart()
 
-type Props = {
-    onAddToCart: (product: Product) => void;
-}
+  useEffect(() => {
+    fetch('http://localhost:3001/api/products')
+      .then(res => res.json())
+      .then(setProducts)
+  }, [])
 
-export default function Produkty({ onAddToCart }: Props) {
-    const [products, setProducts] = useState<Product[]>([]);
-
-    useEffect(() => {
-        fetch("http://localhost:3001/api/products")
-            .then(res => res.json())
-            .then(setProducts)
-            .catch((err) => console.error("Error fetching products:", err));
-    }, []);
-
-    return (
-        <div>
-            <h2>Produkty</h2>
-            <ul>
-                {products.map((product) => (
-                    <li key={product.id}>
-                        {product.name} - {product.price} zł
-                        <button onClick={() => onAddToCart(product)}>
-                            Dodaj do koszyka
-                        </button>
-                    </li>
-                ))}
-            </ul>
-        </div> 
-    );
+  return (
+    <div>
+      <h2>Produkty</h2>
+      <ul>
+        {products.map(p => (
+          <li key={p.id}>
+            {p.name} – {p.price} zł
+            <button onClick={() => addToCart(p)}>Dodaj do koszyka</button>
+          </li>
+        ))}
+      </ul>
+    </div>
+  )
 }
