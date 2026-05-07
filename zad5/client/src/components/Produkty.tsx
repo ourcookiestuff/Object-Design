@@ -1,15 +1,15 @@
 import { useEffect, useState } from 'react'
-import { useCart } from '../context/CartContext'
-import type { Product } from '../context/CartContext'
+import { useCart, type Product } from '../context/CartContext'
+import api from '../api/axiosInstance'
 
 export default function Produkty() {
   const [products, setProducts] = useState<Product[]>([])
   const { addToCart } = useCart()
 
   useEffect(() => {
-    fetch(`/api/products`)
-      .then(res => res.json())
-      .then(setProducts)
+    api.get<Product[]>('/products')
+      .then(res => setProducts(res.data))
+      .catch(err => console.error('Błąd pobierania produktów:', err))
   }, [])
 
   return (
