@@ -1,7 +1,7 @@
 import { useNavigate } from 'react-router-dom'
 import Koszyk from '../components/Koszyk'
 
-type Product = { id: number; name: string; price: number }
+type Product = { id: number; name: string; price: number; cartId: number }
 
 type Props = {
   cart: Product[]
