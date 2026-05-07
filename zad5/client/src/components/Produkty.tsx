@@ -2,7 +2,11 @@ import { useEffect, useState } from "react";
 
 type Product = { id: number; name: string; price: number };
 
-export default function Produkty() {
+type Props = {
+    onAddToCart: (product: Product) => void;
+}
+
+export default function Produkty({ onAddToCart }: Props) {
     const [products, setProducts] = useState<Product[]>([]);
 
     useEffect(() => {
@@ -19,6 +23,9 @@ export default function Produkty() {
                 {products.map((product) => (
                     <li key={product.id}>
                         {product.name} - {product.price} zł
+                        <button onClick={() => onAddToCart(product)}>
+                            Dodaj do koszyka
+                        </button>
                     </li>
                 ))}
             </ul>
