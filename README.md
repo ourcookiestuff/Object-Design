@@ -34,7 +34,7 @@ Zadanie 4 - Wzorce strukturalne - Go (echo)
 
 Zadanie 5 - Wzorce behawioralne - React 
 ---
-✗ | **3.0** Komponenty Produkty oraz Płatności; komponent Produkty pobiera listę produktów z aplikacji serwerowej, komponent Płatności wysyła dane płatności do aplikacji serwerowej.  
+✓ | **3.0** Komponenty Produkty oraz Płatności; komponent Produkty pobiera listę produktów z aplikacji serwerowej, komponent Płatności wysyła dane płatności do aplikacji serwerowej | [Commit](https://github.com/ourcookiestuff/Object-Design/commit/e8bc63ad89df75ef84ffe9f8d1c5b7dd15583c52)  
 ✗ | **3.5** Komponent Koszyk wraz z osobnym widokiem; aplikacja umożliwia przechodzenie pomiędzy widokami przy użyciu routingu.  
 ✗ | **4.0** Dane pomiędzy komponentami, są przekazywane z wykorzystaniem React hooks.  
 ✗ | **4.5** Uruchomienie aplikacji klienckiej oraz serwerowej w kontenerach Docker za pomocą docker-compose.     
