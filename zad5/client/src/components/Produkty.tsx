@@ -7,7 +7,7 @@ export default function Produkty() {
   const { addToCart } = useCart()
 
   useEffect(() => {
-    fetch('http://localhost:3001/api/products')
+    fetch(`/api/products`)
       .then(res => res.json())
       .then(setProducts)
   }, [])

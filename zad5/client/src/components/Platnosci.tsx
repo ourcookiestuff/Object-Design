@@ -7,7 +7,7 @@ export default function Platnosci() {
   const total = cart.reduce((sum, item) => sum + item.price, 0)
 
   const handlePayment = async () => {
-    const res = await fetch('http://localhost:3001/api/payments', {
+    const res = await fetch(`/api/payments`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ items: cart, total }),
