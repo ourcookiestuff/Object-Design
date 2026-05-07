@@ -37,5 +37,5 @@ Zadanie 5 - Wzorce behawioralne - React
 ✓ | **3.0** Komponenty Produkty oraz Płatności; komponent Produkty pobiera listę produktów z aplikacji serwerowej, komponent Płatności wysyła dane płatności do aplikacji serwerowej | [Commit](https://github.com/ourcookiestuff/Object-Design/commit/e8bc63ad89df75ef84ffe9f8d1c5b7dd15583c52)  
 ✓ | **3.5** Komponent Koszyk wraz z osobnym widokiem; aplikacja umożliwia przechodzenie pomiędzy widokami przy użyciu routingu | [Commit](https://github.com/ourcookiestuff/Object-Design/commit/25ef879b9713e3dc6d1c42340f4d5a7288d40254)     
 ✓ | **4.0** Dane pomiędzy komponentami, są przekazywane z wykorzystaniem React hooks | [Commit](https://github.com/ourcookiestuff/Object-Design/commit/04ab8b2dcc26fee70fd713bef11eb73a421a6a1e)   
-✗ | **4.5** Uruchomienie aplikacji klienckiej oraz serwerowej w kontenerach Docker za pomocą docker-compose.     
-✗ | **5.0** Axios do komunikacji z serwerem oraz CORS, aby frontend mógł komunikować się z backendem.    
+✓ | **4.5** Uruchomienie aplikacji klienckiej oraz serwerowej w kontenerach Docker za pomocą docker-compose | [Commit](https://github.com/ourcookiestuff/Object-Design/commit/036286b164620db6431c114bb506f4e705950391)        
+✓ | **5.0** Axios do komunikacji z serwerem oraz CORS, aby frontend mógł komunikować się z backendem | [Commit](https://github.com/ourcookiestuff/Object-Design/commit/8b1fedfe0a53a3e109ab3ba9b582f9c0d6795834)   
