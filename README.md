@@ -39,3 +39,11 @@ Zadanie 5 - Wzorce behawioralne - React
 ✓ | **4.0** Dane pomiędzy komponentami, są przekazywane z wykorzystaniem React hooks | [Commit](https://github.com/ourcookiestuff/Object-Design/commit/04ab8b2dcc26fee70fd713bef11eb73a421a6a1e)   
 ✓ | **4.5** Uruchomienie aplikacji klienckiej oraz serwerowej w kontenerach Docker za pomocą docker-compose | [Commit](https://github.com/ourcookiestuff/Object-Design/commit/036286b164620db6431c114bb506f4e705950391)        
 ✓ | **5.0** Axios do komunikacji z serwerem oraz CORS, aby frontend mógł komunikować się z backendem | [Commit](https://github.com/ourcookiestuff/Object-Design/commit/8b1fedfe0a53a3e109ab3ba9b582f9c0d6795834)   
+
+Zadanie 6 - Code smells - sprawdzanie kodów projektów Kotlin, Go i JS.
+---
+✗ | **3.0** Husky + lint-staged skonfigurowanie uruchamiania lintowania przed commitem     
+✗ | **3.5** Wyeliminwanie wszystkiech bugów w kodzie w Sonarze (kod aplikacji klienckiej)      
+✗ | **4.0** Przeskanowanie oraz naprawienie projekt open source narzędziem CodeQL      
+✗ | **4.5** Usunięcie problemu typu Code Smell w kodzie w Sonarze (kotlin, go, js)    
+✗ | **5.0** Skonfigurowanie Github Actions z linterem oraz CodeQL      
