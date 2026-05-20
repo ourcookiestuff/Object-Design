@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react'
-import { useCart, type Product } from '../context/CartContext'
+import type { Product } from '../context/CartContextDef'
+import { useCart } from '../context/useCart'
 import api from '../api/axiosInstance'
 
 export default function Produkty() {
