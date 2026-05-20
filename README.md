@@ -44,6 +44,6 @@ Zadanie 6 - Code smells - sprawdzanie kodów projektów Kotlin, Go i JS.
 ---
 ✓ | **3.0** Husky + lint-staged skonfigurowanie uruchamiania lintowania przed commitem | [Commit](https://github.com/ourcookiestuff/Object-Design/commit/d93e5dc48749424ff8afed3cd7d62e057f87336c)     
 ✓ | **3.5** Wyeliminwanie wszystkiech bugów w kodzie w Sonarze (kod aplikacji klienckiej) | [Commit](https://github.com/ourcookiestuff/Object-Design/commit/f6be1c78156f5c0c62ad364cf607934e77d65d8c)      
-✗ | **4.0** Przeskanowanie oraz naprawienie projekt open source narzędziem CodeQL      
+✓ | **4.0** Przeskanowanie oraz naprawienie projekt open source narzędziem CodeQL | [Commit](https://github.com/ourcookiestuff/Object-Design/commit/4695aade39280944413df8ba6a1cd4e53661d648)      
 ✗ | **4.5** Usunięcie problemu typu Code Smell w kodzie w Sonarze (kotlin, go, js)    
 ✗ | **5.0** Skonfigurowanie Github Actions z linterem oraz CodeQL      
