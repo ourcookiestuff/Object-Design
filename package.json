@@ -24,8 +24,8 @@
     "lint-staged": "^16.4.0"
   },
     "lint-staged": {
-    "zad5/client/src/**/*.{ts,tsx}": [
-      "eslint --fix"
-    ]
+      "zad5/client/src/**/*.{ts,tsx}": [
+        "zad5/client/node_modules/.bin/eslint --fix"
+      ]
   }
 }
