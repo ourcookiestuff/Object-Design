@@ -42,7 +42,7 @@
         <p><b>Min temp:</b> <span id="min">-</span></p>
     </div>
 
-    <script>
+    <script type="module">
         async function getWeather(city) {
             const url = "http://localhost:8080/weather?city=" + city;
 
@@ -58,12 +58,13 @@
                 document.getElementById("min").textContent = weather.temperature_min + "°C";
 
             } catch (err) {
+                console.error("Błąd pobierania danych:", err);
                 alert("Błąd pobierania danych");
             }
         }
 
         // startowo Warsaw
-        getWeather("Warsaw");
+        await getWeather("Warsaw");
     </script>
 
 </body>
