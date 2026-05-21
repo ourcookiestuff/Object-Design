@@ -1,6 +1,6 @@
 module weather-app
 
-go 1.26.2
+go 1.23.0
 
 require (
 	github.com/jinzhu/inflection v1.0.0 // indirect
