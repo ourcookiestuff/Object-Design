@@ -12,13 +12,17 @@ jobs:
     permissions:
       security-events: write
 
+    strategy:
+      matrix:
+        language: [javascript-typescript, kotlin, go]
+
     steps:
       - uses: actions/checkout@v4
 
       - name: Initialize CodeQL
         uses: github/codeql-action/init@v3
         with:
-          languages: javascript-typescript
+          languages: ${{ matrix.language }}
 
       - name: Autobuild
         uses: github/codeql-action/autobuild@v3
