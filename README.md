@@ -47,4 +47,4 @@ Zadanie 6 - Code smells - sprawdzanie kodów projektów Kotlin, Go i JS.
 ✓ | **3.5** Wyeliminwanie wszystkiech bugów w kodzie w Sonarze (kod aplikacji klienckiej) | [Commit](https://github.com/ourcookiestuff/Object-Design/commit/f6be1c78156f5c0c62ad364cf607934e77d65d8c)      
 ✓ | **4.0** Przeskanowanie oraz naprawienie projekt open source narzędziem CodeQL | [Commit](https://github.com/ourcookiestuff/Object-Design/commit/4695aade39280944413df8ba6a1cd4e53661d648)      
 ✓ | **4.5** Usunięcie problemu typu Code Smell w kodzie w Sonarze (kotlin, go, js) | [Commit](https://github.com/ourcookiestuff/Object-Design/commit/6ec710d1b65144ecbc104cbffa0bb25eac223d66)     
-✗ | **5.0** Skonfigurowanie Github Actions z linterem oraz CodeQL      
+✓ | **5.0** Skonfigurowanie Github Actions z linterem oraz CodeQL | [Commit](https://github.com/ourcookiestuff/Object-Design/commit/a7f44fa0620c354dcc87ae87df7a0f0b41046ad3)      
