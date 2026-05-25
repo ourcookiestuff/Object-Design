@@ -58,5 +58,5 @@ Zadanie 7 - Vapor
 ✓ | 3.0 Kontroler wraz z modelem Produktów zgodny z CRUD w ORM Fluent | [Commit](https://github.com/ourcookiestuff/Object-Design/commit/f3d52433d60f58b982a9b04a04565091b3eab1b9)      
 ✓ | 3.5 Szablony w Leaf | [Commit](https://github.com/ourcookiestuff/Object-Design/commit/2deb681131e34f496b168310feaf9c68f6f2ed44)    
 ✓ | 4.0 Drugi model oraz kontroler Kategorii wraz z relacją | [Commit](https://github.com/ourcookiestuff/Object-Design/commit/953d8be2e4bcd817291d30178dd9d5f20b5e7ee5)    
-✗ | 4.5 Redis do przechowywania danych     
+✓ | 4.5 Redis do przechowywania danych | [Commit](https://github.com/ourcookiestuff/Object-Design/commit/d63245876e3313e9c340ec9154cd5dc2eb86e4dc)     
 ✗ | 5.0 Aplikacja na heroku    
