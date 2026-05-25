@@ -1,0 +1,25 @@
+#extend("base"):
+    #export("title"): Produkt #endexport
+    #export("body"):
+        <h1>#(title)</h1>
+        <form method="POST" action="#(action)">
+            <label>
+                Nazwa<br>
+                <input name="name" value="#(product.name)" required>
+            </label>
+            <br><br>
+            <label>
+                Cena<br>
+                <input name="price" type="number" step="0.01" value="#(product.price)" required>
+            </label>
+            <br><br>
+            <label>
+                Opis<br>
+                <textarea name="description" rows="4">#(product.description)</textarea>
+            </label>
+            <br><br>
+            <button class="btn" type="submit">Zapisz</button>
+            <a href="/products" class="btn btn-secondary">Anuluj</a>
+        </form>
+    #endexport
+#endextend

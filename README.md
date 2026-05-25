@@ -55,7 +55,7 @@ Sonar badge:
 
 Zadanie 7 - Vapor
 ---
-✗ | 3.0 Kontroler wraz z modelem Produktów zgodny z CRUD w ORM Fluent      
+✓ | 3.0 Kontroler wraz z modelem Produktów zgodny z CRUD w ORM Fluent | [Commit](https://github.com/ourcookiestuff/Object-Design/commit/f3d52433d60f58b982a9b04a04565091b3eab1b9)      
 ✗ | 3.5 Szablony w Leaf    
 ✗ | 4.0 Drugi model oraz kontroler Kategorii wraz z relacją    
 ✗ | 4.5 Redis do przechowywania danych     

@@ -6,59 +6,87 @@ struct ProductController: RouteCollection {
     func boot(routes: RoutesBuilder) throws {
         let products = routes.grouped("products")
         products.get(use: index)
+        products.get("new", use: new)
         products.post(use: create)
-        products.group(":id") { product in
-            product.get(use: show)
-            product.put(use: update)
-            product.delete(use: delete)
-        }
+        products.get(":id", "edit", use: edit)
+        products.post(":id", "edit", use: update)
+        products.post(":id", "delete", use: delete)
     }
 
-    // GET /products - lista wszystkich
-    func index(req: Request) async throws -> [Product] {
-        try await Product.query(on: req.db).all()
+    // Dane z formularza HTML
+    struct ProductInput: Content {
+        var name: String
+        var price: Double
+        var description: String
     }
 
-    // POST /products - utwórz nowy
-    func create(req: Request) async throws -> Product {
-        let product = try req.content.decode(Product.self)
+    // GET /products
+    func index(req: Request) async throws -> View {
+        let products = try await Product.query(on: req.db).all()
+        return try await req.view.render("products/index", ["products": products])
+    }
+
+    // GET /products/new
+    func new(req: Request) async throws -> View {
+        let context: [String: String] = [
+            "title": "Nowy produkt",
+            "action": "/products",
+            "product.name": "",
+            "product.price": "0",
+            "product.description": ""
+        ]
+        return try await req.view.render("products/form", context)
+    }
+
+    // POST /products
+    func create(req: Request) async throws -> Response {
+        let input = try req.content.decode(ProductInput.self)
+        let product = Product(name: input.name, price: input.price,
+                              description: input.description)
         try await product.save(on: req.db)
-        return product
+        return req.redirect(to: "/products")
     }
 
-    // GET /products/:id - jeden produkt
-    func show(req: Request) async throws -> Product {
+    // GET /products/:id/edit
+    func edit(req: Request) async throws -> View {
         guard let product = try await Product.find(
             req.parameters.get("id"), on: req.db
         ) else {
             throw Abort(.notFound)
         }
-        return product
+        let context: [String: String] = [
+            "title": "Edytuj produkt",
+            "action": "/products/\(product.id!)/edit",
+            "product.name": product.name,
+            "product.price": "\(product.price)",
+            "product.description": product.description
+        ]
+        return try await req.view.render("products/form", context)
     }
 
-    // PUT /products/:id - aktualizuj
-    func update(req: Request) async throws -> Product {
+    // POST /products/:id/edit
+    func update(req: Request) async throws -> Response {
         guard let product = try await Product.find(
             req.parameters.get("id"), on: req.db
         ) else {
             throw Abort(.notFound)
         }
-        let updated = try req.content.decode(Product.self)
-        product.name = updated.name
-        product.price = updated.price
-        product.description = updated.description
+        let input = try req.content.decode(ProductInput.self)
+        product.name = input.name
+        product.price = input.price
+        product.description = input.description
         try await product.save(on: req.db)
-        return product
+        return req.redirect(to: "/products")
     }
 
-    // DELETE /products/:id - usuń
-    func delete(req: Request) async throws -> HTTPStatus {
+    // POST /products/:id/delete
+    func delete(req: Request) async throws -> Response {
         guard let product = try await Product.find(
             req.parameters.get("id"), on: req.db
         ) else {
             throw Abort(.notFound)
         }
         try await product.delete(on: req.db)
-        return .noContent
+        return req.redirect(to: "/products")
     }
 }
