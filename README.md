@@ -1,5 +1,4 @@
-# Object-Design
-[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=ourcookiestuff_Object-Design&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=ourcookiestuff_Object-Design)     
+# Object-Design   
 
 Zadanie 1 - Paradygmaty - Pascal
 ---
@@ -43,8 +42,21 @@ Zadanie 5 - Wzorce behawioralne - React
 
 Zadanie 6 - Code smells - sprawdzanie kodów projektów Kotlin, Go i JS.
 ---
+Sonar badge:    
+[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=ourcookiestuff_Object-Design&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=ourcookiestuff_Object-Design)
+[![Code Smells](https://sonarcloud.io/api/project_badges/measure?project=ourcookiestuff_Object-Design&metric=code_smells)](https://sonarcloud.io/summary/new_code?id=ourcookiestuff_Object-Design)
+[![Bugs](https://sonarcloud.io/api/project_badges/measure?project=ourcookiestuff_Object-Design&metric=bugs)](https://sonarcloud.io/summary/new_code?id=ourcookiestuff_Object-Design)  
+
 ✓ | **3.0** Husky + lint-staged skonfigurowanie uruchamiania lintowania przed commitem | [Commit](https://github.com/ourcookiestuff/Object-Design/commit/d93e5dc48749424ff8afed3cd7d62e057f87336c)     
 ✓ | **3.5** Wyeliminwanie wszystkiech bugów w kodzie w Sonarze (kod aplikacji klienckiej) | [Commit](https://github.com/ourcookiestuff/Object-Design/commit/f6be1c78156f5c0c62ad364cf607934e77d65d8c)      
 ✓ | **4.0** Przeskanowanie oraz naprawienie projekt open source narzędziem CodeQL | [Commit](https://github.com/ourcookiestuff/Object-Design/commit/4695aade39280944413df8ba6a1cd4e53661d648)      
 ✓ | **4.5** Usunięcie problemu typu Code Smell w kodzie w Sonarze (kotlin, go, js) | [Commit](https://github.com/ourcookiestuff/Object-Design/commit/6ec710d1b65144ecbc104cbffa0bb25eac223d66)     
-✓ | **5.0** Skonfigurowanie Github Actions z linterem oraz CodeQL | [Commit](https://github.com/ourcookiestuff/Object-Design/commit/a7f44fa0620c354dcc87ae87df7a0f0b41046ad3)      
+✓ | **5.0** Skonfigurowanie Github Actions z linterem oraz CodeQL | [Commit](https://github.com/ourcookiestuff/Object-Design/commit/a7f44fa0620c354dcc87ae87df7a0f0b41046ad3)           
+
+Zadanie 7 - Vapor
+---
+✗ | 3.0 Kontroler wraz z modelem Produktów zgodny z CRUD w ORM Fluent      
+✗ | 3.5 Szablony w Leaf    
+✗ | 4.0 Drugi model oraz kontroler Kategorii wraz z relacją    
+✗ | 4.5 Redis do przechowywania danych     
+✗ | 5.0 Aplikacja na heroku    
