@@ -1,7 +1,9 @@
 import Fluent
 import Vapor
+import Redis
 
 struct ProductController: RouteCollection {
+    let cacheKey = RedisKey("products:all")
 
     func boot(routes: RoutesBuilder) throws {
         let products = routes.grouped("products")
@@ -20,7 +22,6 @@ struct ProductController: RouteCollection {
         var categoryID: UUID?
     }
 
-    // Kontekst dla szablonu
     struct ProductContext: Content {
         var title: String
         var action: String
@@ -29,11 +30,35 @@ struct ProductController: RouteCollection {
         var selectedCategoryID: String
     }
 
-    // GET /products
+    // GET /products - najpierw sprawdź cache, potem bazę
     func index(req: Request) async throws -> View {
+        let cacheKey = RedisKey("products:all")
+
+        // Próba odczytu z Redis
+        let respValue = try await req.redis.get(cacheKey).get()
+        if case .bulkString(let buffer) = respValue,
+        let buffer = buffer,
+        let data = buffer.getData(at: 0, length: buffer.readableBytes),
+        let products = try? JSONDecoder().decode([Product].self, from: data) {
+            req.logger.info("Cache HIT")
+            return try await req.view.render("products/index", ["products": products])
+        }
+
+        // Cache MISS
+        req.logger.info("Cache MISS")
         let products = try await Product.query(on: req.db)
-            .with(\.$category) 
+            .with(\.$category)
             .all()
+
+        // Zapisz do Redis
+        if let data = try? JSONEncoder().encode(products) {
+            var buffer = ByteBufferAllocator().buffer(capacity: data.count)
+            buffer.writeBytes(data)
+            let value = RESPValue.bulkString(buffer)
+            try await req.redis.set(cacheKey, to: value).get()
+            try await req.redis.expire(cacheKey, after: .seconds(60)).get()
+        }
+
         return try await req.view.render("products/index", ["products": products])
     }
 
@@ -58,6 +83,8 @@ struct ProductController: RouteCollection {
                               description: input.description,
                               categoryID: input.categoryID)
         try await product.save(on: req.db)
+        // Usuń cache - dane się zmieniły
+        try await req.redis.delete(cacheKey).get()
         return req.redirect(to: "/products")
     }
 
@@ -92,6 +119,8 @@ struct ProductController: RouteCollection {
         product.description = input.description
         product.$category.id = input.categoryID
         try await product.save(on: req.db)
+        // Usuń cache
+        try await req.redis.delete(cacheKey).get()
         return req.redirect(to: "/products")
     }
 
@@ -103,6 +132,8 @@ struct ProductController: RouteCollection {
             throw Abort(.notFound)
         }
         try await product.delete(on: req.db)
+        // Usuń cache
+        try await req.redis.delete(cacheKey).get()
         return req.redirect(to: "/products")
     }
 }
