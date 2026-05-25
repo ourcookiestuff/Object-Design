@@ -1,0 +1,24 @@
+#extend("base"):
+    #export("title"): Kategorie #endexport
+    #export("body"):
+        <h1>Kategorie</h1>
+        <a href="/categories/new" class="btn">+ Nowa kategoria</a>
+        <table>
+            <tr>
+                <th>Nazwa</th>
+                <th>Akcje</th>
+            </tr>
+            #for(category in categories):
+            <tr>
+                <td>#(category.name)</td>
+                <td>
+                    <a href="/categories/#(category.id)/edit" class="btn btn-secondary">Edytuj</a>
+                    <form method="POST" action="/categories/#(category.id)/delete" style="display:inline">
+                        <button class="btn btn-danger">Usuń</button>
+                    </form>
+                </td>
+            </tr>
+            #endfor
+        </table>
+    #endexport
+#endextend

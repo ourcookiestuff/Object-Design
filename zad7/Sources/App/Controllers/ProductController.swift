@@ -13,28 +13,41 @@ struct ProductController: RouteCollection {
         products.post(":id", "delete", use: delete)
     }
 
-    // Dane z formularza HTML
     struct ProductInput: Content {
         var name: String
         var price: Double
         var description: String
+        var categoryID: UUID?
+    }
+
+    // Kontekst dla szablonu
+    struct ProductContext: Content {
+        var title: String
+        var action: String
+        var product: Product
+        var categories: [Category]
+        var selectedCategoryID: String
     }
 
     // GET /products
     func index(req: Request) async throws -> View {
-        let products = try await Product.query(on: req.db).all()
+        let products = try await Product.query(on: req.db)
+            .with(\.$category) 
+            .all()
         return try await req.view.render("products/index", ["products": products])
     }
 
     // GET /products/new
     func new(req: Request) async throws -> View {
-        let context: [String: String] = [
-            "title": "Nowy produkt",
-            "action": "/products",
-            "product.name": "",
-            "product.price": "0",
-            "product.description": ""
-        ]
+        let categories = try await Category.query(on: req.db).all()
+        let empty = Product(name: "", price: 0, description: "")
+        let context = ProductContext(
+            title: "Nowy produkt",
+            action: "/products",
+            product: empty,
+            categories: categories,
+            selectedCategoryID: ""
+        )
         return try await req.view.render("products/form", context)
     }
 
@@ -42,7 +55,8 @@ struct ProductController: RouteCollection {
     func create(req: Request) async throws -> Response {
         let input = try req.content.decode(ProductInput.self)
         let product = Product(name: input.name, price: input.price,
-                              description: input.description)
+                              description: input.description,
+                              categoryID: input.categoryID)
         try await product.save(on: req.db)
         return req.redirect(to: "/products")
     }
@@ -54,13 +68,14 @@ struct ProductController: RouteCollection {
         ) else {
             throw Abort(.notFound)
         }
-        let context: [String: String] = [
-            "title": "Edytuj produkt",
-            "action": "/products/\(product.id!)/edit",
-            "product.name": product.name,
-            "product.price": "\(product.price)",
-            "product.description": product.description
-        ]
+        let categories = try await Category.query(on: req.db).all()
+        let context = ProductContext(
+            title: "Edytuj produkt",
+            action: "/products/\(product.id!)/edit",
+            product: product,
+            categories: categories,
+            selectedCategoryID: product.$category.id?.uuidString ?? ""
+        )
         return try await req.view.render("products/form", context)
     }
 
@@ -75,6 +90,7 @@ struct ProductController: RouteCollection {
         product.name = input.name
         product.price = input.price
         product.description = input.description
+        product.$category.id = input.categoryID
         try await product.save(on: req.db)
         return req.redirect(to: "/products")
     }

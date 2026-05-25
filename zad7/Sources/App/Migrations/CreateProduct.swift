@@ -7,6 +7,7 @@ struct CreateProduct: AsyncMigration {
             .field("name", .string, .required)
             .field("price", .double, .required)
             .field("description", .string, .required)
+            .field("category_id", .uuid, .references("categories", "id", onDelete: .setNull))
             .create()
     }
 

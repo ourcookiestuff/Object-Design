@@ -7,6 +7,7 @@
             <tr>
                 <th>Nazwa</th>
                 <th>Cena</th>
+                <th>Kategoria</th>
                 <th>Opis</th>
                 <th>Akcje</th>
             </tr>
@@ -14,6 +15,13 @@
             <tr>
                 <td>#(product.name)</td>
                 <td>#(product.price) zł</td>
+                <td>
+                    #if(product.category != nil):
+                        #(product.category.name)
+                    #else:
+                        —
+                    #endif
+                </td>
                 <td>#(product.description)</td>
                 <td>
                     <a href="/products/#(product.id)/edit" class="btn btn-secondary">Edytuj</a>

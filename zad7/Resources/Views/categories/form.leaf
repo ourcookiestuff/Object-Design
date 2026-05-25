@@ -1,0 +1,15 @@
+#extend("base"):
+    #export("title"): Kategoria #endexport
+    #export("body"):
+        <h1>#(title)</h1>
+        <form method="POST" action="#(action)">
+            <label>
+                Nazwa<br>
+                <input name="name" value="#(category.name)" required>
+            </label>
+            <br><br>
+            <button class="btn" type="submit">Zapisz</button>
+            <a href="/categories" class="btn btn-secondary">Anuluj</a>
+        </form>
+    #endexport
+#endextend
