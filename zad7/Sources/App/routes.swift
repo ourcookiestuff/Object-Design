@@ -1,7 +1,5 @@
 import Vapor
 
 func routes(_ app: Application) throws {
-    app.get { req async in
-        "Vapor działa!"
-    }
+    try app.register(collection: ProductController())
 }
