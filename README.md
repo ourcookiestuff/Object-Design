@@ -60,3 +60,13 @@ Zadanie 7 - Vapor
 ✓ | 4.0 Drugi model oraz kontroler Kategorii wraz z relacją | [Commit](https://github.com/ourcookiestuff/Object-Design/commit/953d8be2e4bcd817291d30178dd9d5f20b5e7ee5)    
 ✓ | 4.5 Redis do przechowywania danych | [Commit](https://github.com/ourcookiestuff/Object-Design/commit/d63245876e3313e9c340ec9154cd5dc2eb86e4dc)     
 ✗ | 5.0 Aplikacja na heroku    
+
+Zadanie 8 - Testy
+---
+Selenium/Webdrivera (Kotlin, Python, Java, JS, Go, Scala)   
+
+✗ | 3.0 Testowanie formularza rejestracji użytkownika pod kątem walidacji pól obowiązkowych oraz zachowanie aplikacji po wprowadzeniu niepoprawnego formatu adresu e-mail       
+✗ | 3.5 Testy bezpieczeństwa typu Cross-Site Scripting (XSS), próbując wstrzyknąć złośliwy kod JavaScript w aplikacji z Reactem    
+✗ | 4.0 Testowanie działania koszyka zakupowego przy jednoczesnym otwarciu aplikacji w kilku osobnych kartach tej samej przeglądarki, sprawdzając spójność stanów zamówienia (aplikacja z zadania z React'em)      
+✗ | 4.5 Do zadania z React'a dodanie formularza logowania. Przeprowadzenie testów podatności na ataki typu Cross-Site Request Forgery (CSRF), próbując wymusić nieautoryzowaną zmianę ustawień konta spreparowanym linkiem, podczas gdy użytkownik posiada aktywną sesję w innej karcie.      
+✗ | 5.0 Scenariusz End-to-End w Playwright     
