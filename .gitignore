@@ -3,3 +3,4 @@
 BubbleSort
 *.db
 node_modules
+zad8/tests/__pycache__
