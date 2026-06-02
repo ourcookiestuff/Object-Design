@@ -70,3 +70,12 @@ Selenium/Webdrivera (Kotlin, Python, Java, JS, Go, Scala)
 ✗ | 4.0 Testowanie działania koszyka zakupowego przy jednoczesnym otwarciu aplikacji w kilku osobnych kartach tej samej przeglądarki, sprawdzając spójność stanów zamówienia (aplikacja z zadania z React'em)      
 ✗ | 4.5 Do zadania z React'a dodanie formularza logowania. Przeprowadzenie testów podatności na ataki typu Cross-Site Request Forgery (CSRF), próbując wymusić nieautoryzowaną zmianę ustawień konta spreparowanym linkiem, podczas gdy użytkownik posiada aktywną sesję w innej karcie.      
 ✗ | 5.0 Scenariusz End-to-End w Playwright     
+
+Zadanie 9 - Chmura
+---
+✗ | 3.0 Odpowiednie instancje po stronie chmury na dockerze    
+✗ | 3.5 Pipeline w Github Actions do budowania aplikacji   
+✗ | 4.0 Motyfikację mailową o zbudowaniu aplikacji     
+✗ | 4.5 Krok z deploymentem aplikacji serwerowej oraz klienckiej na chmurę     
+✗ | 5.0 Uruchomienie regresyjnych testów automatycznych
+(funkcjonalnych) jako krok w Actions    
