@@ -1,0 +1,25 @@
+name: Build zad9
+
+on:
+  push:
+    paths:
+      - "zad9/**"
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    defaults:
+      run:
+        working-directory: zad9
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - run: npm install
+
+      - run: docker build -t zad9-app .
