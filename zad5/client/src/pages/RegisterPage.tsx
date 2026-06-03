@@ -94,7 +94,23 @@ export default function RegisterPage() {
       </div>
       {error && <p style={{ color: 'red' }}>{error}</p>}
       <button onClick={handleSubmit}>Zarejestruj się</button>
-      <p>Masz już konto? <span onClick={() => navigate('/login')} style={{ cursor: 'pointer', color: 'blue' }}>Zaloguj się</span></p>
+      <p>
+        Masz już konto?{" "}
+        <button
+          onClick={() => navigate("/login")}
+          style={{
+            cursor: "pointer",
+            color: "blue",
+            background: "none",
+            border: "none",
+            padding: 0,
+            font: "inherit",
+            textDecoration: "underline"
+          }}
+        >
+          Zaloguj się
+        </button>
+      </p>
     </div>
   )
 }

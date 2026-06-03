@@ -57,7 +57,23 @@ export default function LoginPage() {
       </div>
       {error && <p style={{ color: 'red' }}>{error}</p>}
       <button onClick={handleSubmit}>Zaloguj się</button>
-      <p>Nie masz konta? <span onClick={() => navigate('/register')} style={{ cursor: 'pointer', color: 'blue' }}>Zarejestruj się</span></p>
+      <p>
+        Nie masz konta?{" "}
+        <button
+          onClick={() => navigate("/register")}
+          style={{
+            cursor: "pointer",
+            color: "blue",
+            background: "none",
+            border: "none",
+            padding: 0,
+            font: "inherit",
+            textDecoration: "underline"
+          }}
+        >
+          Zarejestruj się
+        </button>
+      </p>
     </div>
   )
 }
