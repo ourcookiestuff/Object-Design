@@ -74,7 +74,7 @@ Selenium/Webdrivera (Kotlin, Python, Java, JS, Go, Scala)
 Zadanie 9 - Chmura
 ---
 ✓ | 3.0 Odpowiednie instancje po stronie chmury na dockerze | [Commit](https://github.com/ourcookiestuff/Object-Design/commit/a0579802f877b902eec8ebc6836e41dc499790d6) | [Railway](https://object-design-production.up.railway.app)   
-✗ | 3.5 Pipeline w Github Actions do budowania aplikacji   
+✓ | 3.5 Pipeline w Github Actions do budowania aplikacji | [Commit](https://github.com/ourcookiestuff/Object-Design/commit/447235af0297d274994cf475af8c9c1a1b00797f)   
 ✗ | 4.0 Motyfikację mailową o zbudowaniu aplikacji     
 ✗ | 4.5 Krok z deploymentem aplikacji serwerowej oraz klienckiej na chmurę     
 ✗ | 5.0 Uruchomienie regresyjnych testów automatycznych
